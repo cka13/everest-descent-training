@@ -76,6 +76,7 @@ contactForm.addEventListener('submit', (e) => {
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const course = document.getElementById('course').value;
+    const message = document.getElementById('message').value;
 
     if (!name || !email || !phone || !course) {
         showNotification('Пожалуйста, заполните все обязательные поля', 'error');
@@ -89,14 +90,47 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Submit form (opens Google Form in new tab)
-    contactForm.submit();
+    // Prepare message for Telegram
+    const telegramMessage = `
+🆕 НОВАЯ ЗАЯВКА!
 
-    // Show success message
-    showNotification('Открыта форма заявки. Заполните её и мы свяжемся с вами!', 'success');
+👤 Имя: ${name}
+📧 Email: ${email}
+📱 Телефон: ${phone}
+🎓 Курс: ${course}
+💬 Сообщение: ${message || 'Не указано'}
 
-    // Reset form
-    contactForm.reset();
+⏰ Время: ${new Date().toLocaleString('ru-RU')}
+    `.trim();
+
+    // Send to Telegram bot
+    const botToken = 'ВАШ_BOT_TOKEN';
+    const chatId = 'ВАШ_CHAT_ID';
+
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: telegramMessage,
+            parse_mode: 'HTML'
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            showNotification('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
+            contactForm.reset();
+        } else {
+            showNotification('Ошибка при отправке заявки. Попробуйте еще раз.', 'error');
+        }
+    })
+    .catch(error => {
+        showNotification('Ошибка при отправке заявки. Попробуйте еще раз.', 'error');
+        console.error('Error:', error);
+    });
 });
 
 // Notification system
