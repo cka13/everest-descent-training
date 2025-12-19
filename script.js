@@ -104,8 +104,8 @@ contactForm.addEventListener('submit', (e) => {
     `.trim();
 
     // Send to Telegram bot
-    const botToken = 'ВАШ_BOT_TOKEN';
-    const chatId = 'ВАШ_CHAT_ID';
+    const botToken = '8186974891:AAGc3TAdirnE0WB0mMDyPOTiCelKNSxhUuw';
+    const chatId = '132310665';
 
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: 'POST',
