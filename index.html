@@ -234,26 +234,33 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" action="ВАША_ССЫЛКА_НА_GOOGLE_ФОРМУ" method="POST" target="_blank">
+                    <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/ВАШ_FORM_ID/formResponse" method="POST">
+                        <!-- Скрытые поля для Google Forms (замените entry.XXX на реальные ID) -->
+                        <input type="hidden" name="entry.123456789" value=""> <!-- Имя -->
+                        <input type="hidden" name="entry.987654321" value=""> <!-- Email -->
+                        <input type="hidden" name="entry.111111111" value=""> <!-- Телефон -->
+                        <input type="hidden" name="entry.222222222" value=""> <!-- Курс -->
+                        <input type="hidden" name="entry.333333333" value=""> <!-- Сообщение -->
+
                         <div class="form-group">
-                            <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                            <input type="text" id="name" name="entry.123456789" required placeholder="Ваше имя">
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" required placeholder="Email">
+                            <input type="email" id="email" name="entry.987654321" required placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" required placeholder="Телефон">
+                            <input type="tel" id="phone" name="entry.111111111" required placeholder="Телефон">
                         </div>
                         <div class="form-group">
-                            <select id="course" name="course" required>
+                            <select id="course" name="entry.222222222" required>
                                 <option value="">Выберите курс</option>
-                                <option value="basic">Базовый курс</option>
-                                <option value="professional">Профессиональный курс</option>
-                                <option value="vip">VIP курс</option>
+                                <option value="Базовый курс (175,000 ₽)">Базовый курс (175,000 ₽)</option>
+                                <option value="Профессиональный курс (350,000 ₽)">Профессиональный курс (350,000 ₽)</option>
+                                <option value="VIP курс (750,000 ₽)">VIP курс (750,000 ₽)</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" rows="4" placeholder="Сообщение (опционально)"></textarea>
+                            <textarea id="message" name="entry.333333333" rows="4" placeholder="Сообщение (опционально)"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Отправить заявку</button>
                     </form>

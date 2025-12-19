@@ -72,23 +72,29 @@ contactForm.addEventListener('submit', (e) => {
     const data = Object.fromEntries(formData);
 
     // Basic form validation
-    if (!data.name || !data.email || !data.phone || !data.course) {
+    const formData = new FormData(contactForm);
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const course = document.getElementById('course').value;
+
+    if (!name || !email || !phone || !course) {
         showNotification('Пожалуйста, заполните все обязательные поля', 'error');
         return;
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
+    if (!emailRegex.test(email)) {
         showNotification('Введите корректный email адрес', 'error');
         return;
     }
 
-    // Submit form (opens Google Form in new tab)
+    // Submit form to Google Sheets
     contactForm.submit();
 
     // Show success message
-    showNotification('Открыта форма заявки. Заполните её и мы свяжемся с вами!', 'success');
+    showNotification('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
 
     // Reset form
     contactForm.reset();
