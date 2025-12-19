@@ -84,7 +84,10 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Simulate form submission
+    // Submit form
+    contactForm.submit();
+
+    // Show success message
     showNotification('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
 
     // Reset form
