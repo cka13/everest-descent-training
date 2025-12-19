@@ -86,10 +86,11 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
+    min-height: 800px;
     position: relative;
     display: flex;
     align-items: center;
-    background: url('https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center center / cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center center / cover no-repeat;
     overflow: hidden;
 }
 
@@ -106,8 +107,9 @@ body {
     position: relative;
     z-index: 2;
     color: #fff;
-    max-width: 600px;
+    max-width: 550px;
     padding: 0 20px;
+    margin-left: 5%;
 }
 
 .hero-title {
@@ -350,53 +352,42 @@ section {
 
 .training-timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
+    padding-left: 40px;
 }
 
 .training-timeline::before {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 15px;
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: 3px;
     background: #ff6b35;
-    transform: translateX(-50%);
+    border-radius: 3px;
 }
 
 .timeline-item {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     position: relative;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    left: 50%;
-    margin-left: 30px;
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-    left: 0;
-    text-align: right;
-    margin-right: 30px;
 }
 
 .timeline-content {
     background: #fff;
-    padding: 30px;
+    padding: 25px 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     position: relative;
-    max-width: 400px;
+    border: 1px solid #eee;
 }
 
 .timeline-number {
     position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
+    left: -55px;
+    top: 25px;
+    width: 35px;
+    height: 35px;
     background: #ff6b35;
     color: #fff;
     border-radius: 50%;
@@ -404,7 +395,8 @@ section {
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
 }
 
 .timeline-content h3 {
@@ -450,7 +442,7 @@ section {
 
 .pricing-card.featured {
     border: 3px solid #ff6b35;
-    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(255, 107, 53, 0.2);
 }
 
 .pricing-badge {
@@ -480,20 +472,36 @@ section {
 .price {
     font-size: 2.5rem;
     font-weight: 700;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 5px;
+    text-align: center;
+}
+
+.price-old {
+    display: block;
+    text-decoration: line-through;
+    opacity: 0.5;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 5px;
 }
 
 .currency {
     font-size: 1.5rem;
 }
 
+.amount {
+    font-size: 2.5rem;
+}
+
 .pricing-features {
     list-style: none;
-    padding: 30px;
+    padding: 25px 30px;
     margin: 0;
+}
+
+.pricing-card .btn {
+    margin: 0 30px 30px;
+    display: block;
+    text-align: center;
 }
 
 .pricing-features li {
@@ -677,6 +685,8 @@ section {
     .hero-content {
         max-width: 100%;
         margin-bottom: 40px;
+        margin-left: 0;
+        padding: 0 20px;
     }
 
     .hero-title {
@@ -700,16 +710,23 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .training-timeline {
+        padding-left: 30px;
+    }
+    
     .training-timeline::before {
-        left: 20px;
+        left: 10px;
     }
 
-    .timeline-item:nth-child(even) .timeline-content,
-    .timeline-item:nth-child(odd) .timeline-content {
-        left: 60px;
-        margin: 0;
-        text-align: left;
-        max-width: none;
+    .timeline-number {
+        left: -45px;
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content {
+        padding: 20px;
     }
 
     .contact-grid {
@@ -1220,14 +1237,6 @@ section {
 }
 
 /* Pricing Updates */
-.price-old {
-    text-decoration: line-through;
-    opacity: 0.5;
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 5px;
-}
-
 .price-note {
     display: block;
     font-size: 0.85rem;
