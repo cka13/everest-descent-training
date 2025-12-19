@@ -84,11 +84,11 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Submit form
+    // Submit form (opens Google Form in new tab)
     contactForm.submit();
 
     // Show success message
-    showNotification('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
+    showNotification('Открыта форма заявки. Заполните её и мы свяжемся с вами!', 'success');
 
     // Reset form
     contactForm.reset();
