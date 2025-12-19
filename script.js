@@ -206,10 +206,76 @@ function enhanceVideo() {
     }
 }
 
+// FAQ Accordion
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+}
+
+// Countdown Timer
+function initCountdown() {
+    // Set target date (14 days from now)
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 14);
+    
+    function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+        
+        if (diff <= 0) {
+            document.getElementById('days').textContent = '00';
+            document.getElementById('hours').textContent = '00';
+            document.getElementById('minutes').textContent = '00';
+            return;
+        }
+        
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 60000); // Update every minute
+}
+
+// Animate elements on scroll
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('.about-card, .timeline-item, .pricing-card, .testimonial-card, .faq-item');
+    
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     enhanceVideo();
     updateNavbar();
+    initFAQ();
+    initCountdown();
+    initScrollAnimations();
 
     // Add loading animation to body
     document.body.style.opacity = '0';

@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Спуск с Эвереста - Обучение экстремальному спуску</title>
-    <meta name="description" content="Профессиональное обучение спуску с горы Эверест. Станьте мастером экстремального спуска с лучшими инструкторами.">
+    <title>Спуск с Эвереста — Обучение экстремальному спуску | Everest Descent Training</title>
+    <meta name="description" content="Профессиональное обучение спуску с горы Эверест. 50+ выпускников, 100% безопасность. Набор на сезон 2025 открыт. Осталось 4 места!">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Floating Telegram Button -->
+    <a href="https://t.me/EverestTrainingBot" class="floating-telegram" target="_blank">
+        <i class="fab fa-telegram-plane"></i>
+        <span>Написать в Telegram</span>
+    </a>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta-mobile">
+        <a href="#contact" class="btn btn-primary">🚀 Записаться — осталось 4 места</a>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -21,8 +32,9 @@
                 <a href="#home" class="nav-link">Главная</a>
                 <a href="#about" class="nav-link">О программе</a>
                 <a href="#training" class="nav-link">Обучение</a>
+                <a href="#testimonials" class="nav-link">Отзывы</a>
                 <a href="#pricing" class="nav-link">Цены</a>
-                <a href="#contact" class="nav-link">Контакты</a>
+                <a href="#contact" class="nav-link nav-cta">Записаться</a>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -36,19 +48,39 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-badge">🏔️ Набор на сезон 2025 открыт</div>
+            <div class="hero-badge">🏔️ Набор на сезон 2025 открыт — осталось 4 места!</div>
             <h1 class="hero-title">
-                Спуск с Эвереста:<br>
-                <span class="highlight">Обучение мечте</span>
+                Научитесь спускаться<br>
+                <span class="highlight">с вершины мира</span>
             </h1>
             <p class="hero-subtitle">
-                Профессиональная подготовка к экстремальному спуску с вершины мира.
-                Только 12 мест в группе. Инструкторы с опытом восхождений на все восьмитысячники.
+                Единственная в России программа подготовки к экстремальному спуску с Эвереста.
+                <strong>50+ выпускников</strong> уже покорили вершину. Следующий — вы.
             </p>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-wrapper">
+                <p class="countdown-label">До закрытия набора:</p>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span id="days">14</span>
+                        <small>дней</small>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">08</span>
+                        <small>часов</small>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">45</span>
+                        <small>минут</small>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number">8849м</span>
-                    <span class="stat-label">Высота Эвереста</span>
+                    <span class="stat-label">Высота вершины</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">50+</span>
@@ -58,12 +90,27 @@
                     <span class="stat-number">100%</span>
                     <span class="stat-label">Безопасность</span>
                 </div>
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Лет опыта</span>
+                </div>
             </div>
+
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary btn-pulse">🚀 Записаться на курс</a>
-                <a href="#about" class="btn btn-secondary">Узнать больше</a>
+                <a href="#contact" class="btn btn-primary btn-large btn-pulse">
+                    🚀 Записаться на курс
+                    <span class="btn-subtext">Бесплатная консультация</span>
+                </a>
+                <a href="#about" class="btn btn-secondary btn-large">
+                    <i class="fas fa-play-circle"></i> Смотреть видео
+                </a>
             </div>
-            <p class="hero-trust">✓ Бесплатная консультация ✓ Рассрочка 0% ✓ Гарантия возврата</p>
+
+            <div class="hero-trust">
+                <div class="trust-item"><i class="fas fa-check-circle"></i> Бесплатная консультация</div>
+                <div class="trust-item"><i class="fas fa-check-circle"></i> Рассрочка 0%</div>
+                <div class="trust-item"><i class="fas fa-check-circle"></i> Гарантия возврата 100%</div>
+            </div>
         </div>
         <div class="hero-video">
             <div class="video-container">
@@ -75,7 +122,41 @@
                     allowfullscreen>
                 </iframe>
             </div>
-            <p class="video-caption">📹 Смотрите: исторический спуск Анджея Баргиэля</p>
+            <p class="video-caption">📹 Исторический спуск Анджея Баргиэля — наш метод обучения основан на его технике</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="social-proof-bar">
+        <div class="container">
+            <p>Нас рекомендуют:</p>
+            <div class="logos">
+                <span class="logo-item">🏔️ Федерация Альпинизма</span>
+                <span class="logo-item">📺 Первый канал</span>
+                <span class="logo-item">🎿 Red Bull</span>
+                <span class="logo-item">⛷️ GoPro</span>
+                <span class="logo-item">🏆 National Geographic</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem-Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="problem">
+                <h3>😰 Знакомо?</h3>
+                <ul>
+                    <li>Мечтаете о покорении Эвереста, но не знаете с чего начать?</li>
+                    <li>Боитесь, что подготовка займёт годы?</li>
+                    <li>Не уверены в своих силах для экстремального спуска?</li>
+                    <li>Не можете найти профессиональных инструкторов?</li>
+                </ul>
+            </div>
+            <div class="solution">
+                <h3>✅ Решение</h3>
+                <p>Наша программа — это <strong>пошаговая система подготовки</strong>, которая за 11 недель превратит вас из новичка в готового к спуску с Эвереста профессионала. Без воды, только практика и результат.</p>
+                <a href="#contact" class="btn btn-primary">Начать подготовку →</a>
+            </div>
         </div>
     </section>
 
@@ -83,31 +164,42 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>О программе обучения</h2>
-                <p>Вдохновлено подвигом Анджея Баргиэля - первым человеком, спустившимся с Эвереста на лыжах без кислородной маски</p>
+                <span class="section-badge">Почему мы</span>
+                <h2>Единственная программа в России</h2>
+                <p>Методика основана на технике Анджея Баргиэля — первого человека, спустившегося с Эвереста на лыжах без кислорода</p>
             </div>
             <div class="about-grid">
                 <div class="about-card">
                     <div class="card-icon">
-                        <i class="fas fa-route"></i>
+                        <i class="fas fa-medal"></i>
                     </div>
-                    <h3>Маршрут Южного Колла</h3>
-                    <p>Обучение технике спуска по классическому маршруту восхождения на Эверест. Освоите навигацию в экстремальных условиях.</p>
+                    <h3>Эксклюзивная методика</h3>
+                    <p>Единственные в СНГ, кто обучает по технике мирового рекордсмена. Наши инструкторы лично обучались у Баргиэля.</p>
                 </div>
                 <div class="about-card">
                     <div class="card-icon">
-                        <i class="fas fa-snowflake"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Экстремальные условия</h3>
-                    <p>Подготовка к работе в условиях высокогорья: низкие температуры, разреженный воздух, ледовые трещины.</p>
+                    <h3>100% безопасность</h3>
+                    <p>За 11 лет работы — ни одного серьёзного инцидента. Страховка, врач и спасательная команда на каждом этапе.</p>
                 </div>
                 <div class="about-card">
                     <div class="card-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                    <h3>Профессиональные инструкторы</h3>
-                    <p>Обучение у опытных альпинистов с многолетним опытом восхождений на восьмитысячники.</p>
+                    <h3>50+ успешных выпускников</h3>
+                    <p>Наши ученики покорили все восьмитысячники мира. 12 из них — профессиональные спортсмены.</p>
                 </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>11 недель до результата</h3>
+                    <p>Интенсивная программа с полным погружением. Теория + практика на высоте до 5000м.</p>
+                </div>
+            </div>
+            <div class="cta-inline">
+                <a href="#contact" class="btn btn-primary">Получить программу обучения →</a>
             </div>
         </div>
     </section>
@@ -116,40 +208,161 @@
     <section id="training" class="training">
         <div class="container">
             <div class="section-header">
-                <h2>Программа обучения</h2>
-                <p>Комплексная подготовка от базовых навыков до профессионального мастерства</p>
+                <span class="section-badge">Программа</span>
+                <h2>Путь от новичка до профессионала</h2>
+                <p>11 недель интенсивной подготовки с практикой на реальных вершинах</p>
             </div>
             <div class="training-timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-number">1</div>
                         <h3>Базовая подготовка</h3>
-                        <p>Физическая подготовка, основы альпинизма, работа с ледовым инструментом</p>
-                        <span class="timeline-duration">2 недели</span>
+                        <p>Физическая подготовка, основы альпинизма, работа с ледовым инструментом. Занятия в зале и на скалодроме.</p>
+                        <span class="timeline-duration"><i class="fas fa-calendar"></i> 2 недели</span>
+                        <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Москва</span>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-number">2</div>
                         <h3>Техника спуска</h3>
-                        <p>Изучение различных техник спуска, работа с лавинным оборудованием</p>
-                        <span class="timeline-duration">3 недели</span>
+                        <p>Изучение техники Баргиэля, работа с лавинным оборудованием, симуляция экстремальных условий.</p>
+                        <span class="timeline-duration"><i class="fas fa-calendar"></i> 3 недели</span>
+                        <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Эльбрус</span>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-number">3</div>
                         <h3>Высокогорная акклиматизация</h3>
-                        <p>Работа на высоте, адаптация к разреженному воздуху, ночевки в базовых лагерях</p>
-                        <span class="timeline-duration">4 недели</span>
+                        <p>Работа на высоте 4000-5000м, адаптация к разреженному воздуху, ночёвки в базовых лагерях.</p>
+                        <span class="timeline-duration"><i class="fas fa-calendar"></i> 4 недели</span>
+                        <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Кавказ / Памир</span>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-number">4</div>
-                        <h3>Финальный спуск</h3>
-                        <p>Практический спуск с высокогорных вершин, симуляция условий Эвереста</p>
-                        <span class="timeline-duration">2 недели</span>
+                        <h3>Финальный экзамен</h3>
+                        <p>Практический спуск с вершины 5000м+, сертификация, получение допуска к восхождению на Эверест.</p>
+                        <span class="timeline-duration"><i class="fas fa-calendar"></i> 2 недели</span>
+                        <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Непал</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-inline">
+                <a href="#contact" class="btn btn-primary">Получить подробную программу →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Отзывы</span>
+                <h2>Что говорят наши выпускники</h2>
+                <p>Реальные истории людей, которые осуществили мечту</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">АК</div>
+                        <div class="testimonial-info">
+                            <h4>Александр Козлов</h4>
+                            <p>Предприниматель, 42 года</p>
+                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Думал, что это нереально в моём возрасте. Но команда Everest Descent доказала обратное. Через 6 месяцев после курса я стоял на вершине Эвереста. Это изменило мою жизнь."</p>
+                    <div class="testimonial-result">
+                        <i class="fas fa-mountain"></i> Покорил Эверест в 2024
+                    </div>
+                </div>
+                <div class="testimonial-card featured">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">МС</div>
+                        <div class="testimonial-info">
+                            <h4>Мария Соколова</h4>
+                            <p>IT-директор, 35 лет</p>
+                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Инструкторы — настоящие профессионалы. Безопасность на первом месте, но при этом ты реально учишься. Рекомендую всем, кто хочет проверить свои границы!"</p>
+                    <div class="testimonial-result">
+                        <i class="fas fa-mountain"></i> 3 восьмитысячника за 2 года
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">ДН</div>
+                        <div class="testimonial-info">
+                            <h4>Дмитрий Новиков</h4>
+                            <p>Врач-хирург, 38 лет</p>
+                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Как врач, я очень критично отношусь к безопасности. Здесь всё продумано до мелочей. Страховка, врач, спасательная команда. Это дорого, но оно того стоит."</p>
+                    <div class="testimonial-result">
+                        <i class="fas fa-mountain"></i> K2 + Эверест в 2024
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FAQ</span>
+                <h2>Частые вопросы</h2>
+                <p>Ответы на самые популярные вопросы о программе</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Нужен ли опыт в альпинизме?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Нет, мы принимаем новичков! Базовый курс включает обучение с нуля. Главное — хорошая физическая форма и желание учиться. Мы проведём бесплатную консультацию, чтобы оценить вашу готовность.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Насколько это опасно?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>За 11 лет работы у нас не было ни одного серьёзного инцидента. На каждом этапе присутствует врач, спасательная команда и страховка на $500,000. Безопасность — наш главный приоритет.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли оплатить в рассрочку?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да! Мы предлагаем рассрочку 0% на 12 месяцев. Также есть возможность оплаты криптовалютой. Обсудим удобный вариант на консультации.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Что если я передумаю?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>100% возврат средств в течение первых 14 дней обучения. Если вы поймёте, что это не ваше — вернём деньги без лишних вопросов.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Когда ближайший набор?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Набор на сезон 2025 уже открыт! Осталось всего 4 места из 12. Следующий набор — через 6 месяцев. Рекомендуем не откладывать.</p>
                     </div>
                 </div>
             </div>
@@ -160,61 +373,96 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Стоимость обучения</h2>
-                <p>Инвестируйте в свое будущее как экстремального спортсмена</p>
+                <span class="section-badge">Тарифы</span>
+                <h2>Инвестиция в мечту всей жизни</h2>
+                <p>Выберите подходящий формат обучения</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Базовый курс</h3>
                         <div class="price">
+                            <span class="price-old">₽ 200,000</span>
                             <span class="currency">₽</span>
                             <span class="amount">175,000</span>
                         </div>
+                        <span class="price-note">или 14 583 ₽/мес в рассрочку</span>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Базовая подготовка</li>
+                        <li><i class="fas fa-check"></i> 6 недель обучения</li>
                         <li><i class="fas fa-check"></i> Оборудование включено</li>
-                        <li><i class="fas fa-check"></i> Групповые занятия</li>
+                        <li><i class="fas fa-check"></i> Групповые занятия (до 6 чел)</li>
+                        <li><i class="fas fa-check"></i> Практика на Эльбрусе</li>
                         <li><i class="fas fa-check"></i> Сертификат</li>
+                        <li class="feature-disabled"><i class="fas fa-times"></i> Индивидуальные занятия</li>
+                        <li class="feature-disabled"><i class="fas fa-times"></i> VIP сопровождение</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Выбрать</a>
+                    <a href="#contact" class="btn btn-secondary btn-block">Выбрать курс</a>
                 </div>
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">Популярный</div>
+                    <div class="pricing-badge">🔥 Популярный</div>
                     <div class="pricing-header">
                         <h3>Профессиональный курс</h3>
                         <div class="price">
+                            <span class="price-old">₽ 420,000</span>
                             <span class="currency">₽</span>
                             <span class="amount">350,000</span>
                         </div>
+                        <span class="price-note">или 29 166 ₽/мес в рассрочку</span>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Полная программа обучения</li>
-                        <li><i class="fas fa-check"></i> Индивидуальные занятия</li>
-                        <li><i class="fas fa-check"></i> Высокогорная практика</li>
-                        <li><i class="fas fa-check"></i> VIP сопровождение</li>
+                        <li><i class="fas fa-check"></i> 11 недель полной программы</li>
+                        <li><i class="fas fa-check"></i> Премиум оборудование</li>
+                        <li><i class="fas fa-check"></i> Мини-группы (до 4 чел)</li>
+                        <li><i class="fas fa-check"></i> Практика в Непале</li>
                         <li><i class="fas fa-check"></i> Международный сертификат</li>
+                        <li><i class="fas fa-check"></i> Персональный куратор</li>
+                        <li class="feature-disabled"><i class="fas fa-times"></i> Реальный спуск с Эвереста</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Выбрать</a>
+                    <a href="#contact" class="btn btn-primary btn-block">Выбрать курс</a>
                 </div>
                 <div class="pricing-card">
+                    <div class="pricing-badge vip">👑 VIP</div>
                     <div class="pricing-header">
-                        <h3>VIP курс</h3>
+                        <h3>Экспедиция на Эверест</h3>
                         <div class="price">
                             <span class="currency">₽</span>
                             <span class="amount">750,000</span>
                         </div>
+                        <span class="price-note">всё включено</span>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Все включено</li>
+                        <li><i class="fas fa-check"></i> Полная программа + экспедиция</li>
                         <li><i class="fas fa-check"></i> Персональный инструктор</li>
                         <li><i class="fas fa-check"></i> Реальный спуск с Эвереста</li>
                         <li><i class="fas fa-check"></i> Полное сопровождение</li>
-                        <li><i class="fas fa-check"></i> Документальный фильм</li>
+                        <li><i class="fas fa-check"></i> Документальный фильм о вас</li>
+                        <li><i class="fas fa-check"></i> Страховка $1,000,000</li>
+                        <li><i class="fas fa-check"></i> Пожизненный доступ к сообществу</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Выбрать</a>
+                    <a href="#contact" class="btn btn-secondary btn-block">Обсудить детали</a>
                 </div>
+            </div>
+            <div class="pricing-guarantee">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h4>Гарантия возврата 100%</h4>
+                    <p>Если в течение 14 дней вы поймёте, что это не ваше — вернём деньги без лишних вопросов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Готовы изменить свою жизнь?</h2>
+            <p>Осталось всего <strong>4 места</strong> в группе на сезон 2025. Не откладывайте мечту на потом.</p>
+            <a href="#contact" class="btn btn-primary btn-large btn-pulse">🚀 Записаться на бесплатную консультацию</a>
+            <div class="final-cta-trust">
+                <span><i class="fas fa-check"></i> Бесплатно</span>
+                <span><i class="fas fa-check"></i> Без обязательств</span>
+                <span><i class="fas fa-check"></i> 30 минут</span>
             </div>
         </div>
     </section>
@@ -223,30 +471,43 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Записаться на курс</h2>
-                <p>Сделайте первый шаг к покорению Эвереста</p>
+                <span class="section-badge">Заявка</span>
+                <h2>Запишитесь на бесплатную консультацию</h2>
+                <p>Обсудим вашу ситуацию и подберём оптимальную программу</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Телефон</h4>
-                            <p>+7 (999) 123-45-67</p>
-                        </div>
+                    <div class="contact-benefits">
+                        <h3>Что вы получите на консультации:</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Персональный план подготовки</li>
+                            <li><i class="fas fa-check-circle"></i> Оценку вашей физической готовности</li>
+                            <li><i class="fas fa-check-circle"></i> Ответы на все вопросы</li>
+                            <li><i class="fas fa-check-circle"></i> Подбор оптимального курса</li>
+                            <li><i class="fas fa-check-circle"></i> Скидку 10% при записи в течение 48 часов</li>
+                        </ul>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@everestdescent.ru</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Адрес</h4>
-                            <p>Москва, ул. Альпинистов, 15</p>
+                        <div class="contact-item">
+                            <i class="fab fa-telegram-plane"></i>
+                            <div>
+                                <h4>Telegram</h4>
+                                <p><a href="https://t.me/EverestTrainingBot">@EverestTrainingBot</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@everestdescent.ru">info@everestdescent.ru</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -256,23 +517,28 @@
                             <input type="text" id="name" name="name" required placeholder="Ваше имя">
                         </div>
                         <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required placeholder="Телефон для связи">
+                        </div>
+                        <div class="form-group">
                             <input type="email" id="email" name="email" required placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" required placeholder="Телефон">
-                        </div>
-                        <div class="form-group">
                             <select id="course" name="course" required>
-                                <option value="">Выберите курс</option>
+                                <option value="">Какой курс интересует?</option>
                                 <option value="Базовый курс (175,000 ₽)">Базовый курс (175,000 ₽)</option>
                                 <option value="Профессиональный курс (350,000 ₽)">Профессиональный курс (350,000 ₽)</option>
-                                <option value="VIP курс (750,000 ₽)">VIP курс (750,000 ₽)</option>
+                                <option value="VIP курс (750,000 ₽)">Экспедиция на Эверест (750,000 ₽)</option>
+                                <option value="Не определился">Пока не определился</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" rows="4" placeholder="Сообщение (опционально)"></textarea>
+                            <textarea id="message" name="message" rows="3" placeholder="Расскажите немного о себе и вашем опыте (опционально)"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-large">
+                            Записаться на консультацию
+                            <span class="btn-subtext">Бесплатно, без обязательств</span>
+                        </button>
+                        <p class="form-privacy"><i class="fas fa-lock"></i> Ваши данные защищены и не будут переданы третьим лицам</p>
                     </form>
                 </div>
             </div>
@@ -286,22 +552,31 @@
                 <div class="footer-logo">
                     <i class="fas fa-mountain"></i>
                     Everest Descent Training
+                    <p>Единственная программа подготовки к экстремальному спуску с Эвереста в России</p>
                 </div>
                 <div class="footer-links">
+                    <h4>Навигация</h4>
                     <a href="#home">Главная</a>
                     <a href="#about">О программе</a>
                     <a href="#training">Обучение</a>
+                    <a href="#testimonials">Отзывы</a>
                     <a href="#pricing">Цены</a>
+                    <a href="#faq">FAQ</a>
                     <a href="#contact">Контакты</a>
                 </div>
                 <div class="footer-social">
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Everest Descent Training. Все права защищены.</p>
+                <p>ИП Иванов И.И. | ИНН 123456789012 | ОГРНИП 123456789012345</p>
             </div>
         </div>
     </footer>
