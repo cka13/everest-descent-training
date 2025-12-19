@@ -76,7 +76,6 @@ contactForm.addEventListener('submit', (e) => {
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const course = document.getElementById('course').value;
-    const message = document.getElementById('message').value;
 
     if (!name || !email || !phone || !course) {
         showNotification('Пожалуйста, заполните все обязательные поля', 'error');
@@ -90,36 +89,14 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Prepare data for submission
-    const formData = {
-        name: name,
-        email: email,
-        phone: phone,
-        course: course,
-        message: message
-    };
+    // Submit form (opens Google Form in new tab)
+    contactForm.submit();
 
-    // Submit to Google Apps Script
-    fetch(contactForm.action, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            showNotification('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
-            contactForm.reset();
-        } else {
-            showNotification('Ошибка при отправке заявки. Попробуйте еще раз.', 'error');
-        }
-    })
-    .catch(error => {
-        showNotification('Ошибка при отправке заявки. Попробуйте еще раз.', 'error');
-        console.error('Error:', error);
-    });
+    // Show success message
+    showNotification('Открыта форма заявки. Заполните её и мы свяжемся с вами!', 'success');
+
+    // Reset form
+    contactForm.reset();
 });
 
 // Notification system
