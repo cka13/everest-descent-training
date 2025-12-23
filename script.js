@@ -51,13 +51,11 @@ function toggleMobileMenu() {
 
 navToggle.addEventListener('click', toggleMobileMenu);
 
-// Navbar background on scroll
+// Navbar background on scroll (Neo-Brutalism style)
 function updateNavbar() {
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 4px 0 0 rgba(0, 0, 0, 1)';
     } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.9)';
         navbar.style.boxShadow = 'none';
     }
 }
@@ -178,19 +176,12 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animated');
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.about-card, .timeline-item, .pricing-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
+// Observe elements for animation (handled in initScrollAnimations)
 
 // Video lazy loading enhancement
 function enhanceVideo() {
@@ -259,12 +250,10 @@ function initCountdown() {
 
 // Animate elements on scroll
 function initScrollAnimations() {
-    const elements = document.querySelectorAll('.about-card, .timeline-item, .pricing-card, .testimonial-card, .faq-item');
+    const elements = document.querySelectorAll('.about-card, .timeline-content, .pricing-card, .testimonial-card, .faq-item');
     
-    elements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    elements.forEach((el, index) => {
+        el.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(el);
     });
 }
@@ -293,29 +282,31 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Add CSS for notifications
+// Add CSS for notifications (Neo-Brutalism style)
 const notificationStyles = `
     .notification {
         position: fixed;
         top: 90px;
         right: 20px;
         max-width: 400px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        background: #FFFEF9;
+        border: 3px solid #000;
+        border-radius: 16px;
+        box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 1);
         z-index: 10000;
         transform: translateX(420px);
         opacity: 0;
         transition: all 0.3s ease;
-        border-left: 4px solid #ff6b35;
+        display: flex;
+        align-items: stretch;
     }
 
     .notification-success {
-        border-left-color: #28a745;
+        background: #86EFAC;
     }
 
     .notification-error {
-        border-left-color: #dc3545;
+        background: #FDA4AF;
     }
 
     .notification-content {
@@ -323,57 +314,28 @@ const notificationStyles = `
         align-items: center;
         gap: 12px;
         padding: 16px 20px;
+        font-weight: 600;
     }
 
     .notification-content i {
         font-size: 1.2rem;
-        color: #ff6b35;
-    }
-
-    .notification-success .notification-content i {
-        color: #28a745;
-    }
-
-    .notification-error .notification-content i {
-        color: #dc3545;
+        color: #000;
     }
 
     .notification-close {
-        background: none;
+        background: #FCD34D;
         border: none;
+        border-left: 3px solid #000;
         font-size: 1.2rem;
-        color: #666;
+        color: #000;
         cursor: pointer;
         padding: 16px;
-        transition: color 0.3s ease;
+        transition: background 0.15s ease;
+        border-radius: 0 13px 13px 0;
     }
 
     .notification-close:hover {
-        color: #333;
-    }
-
-    .nav-menu.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 20px;
-        gap: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    @media (min-width: 769px) {
-        .nav-menu.active {
-            display: flex !important;
-            flex-direction: row !important;
-            position: static !important;
-            background: none !important;
-            padding: 0 !important;
-            border-top: none !important;
-        }
+        background: #FBBF24;
     }
 `;
 
